@@ -1,0 +1,53 @@
+<div class="container">
+    <h1 class="title">Double V Partners</h1>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col">
+            <input  id="field" #val type="text"  class="form-control" placeholder="User" > 
+        </div>
+        <div class="col"  >
+            <button class="form-control btn btn-default" id="searchImg" (click)="search(val.value)" (click)="showDivs()">
+                <img src="assets/img/lupa.png" width="40" />
+           </button>
+        </div>
+    </div> 
+    <br>
+    
+    <div class="row"  *ngIf="visability"> 
+        <br>
+        <br>
+        <br>
+        <table class="styled-table">
+            <thead  class="thead">
+              <tr>
+                <th scope="col">User</th>
+                <th scope="col"> Id</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr (click)="seeUser(user)" *ngFor="let user of users  | slice:0:10;">
+                    
+                    <td>
+                        <a class="nav-link" routerLink="user"> {{ user.login}} </a>  
+                    </td>
+                    <td>
+                        <a class="nav-link" routerLink="user"> {{ user.id }} </a>  
+                    </td>
+                        
+                </tr>
+            </tbody>
+          </table>
+
+          
+        <ul>
+            
+        </ul>
+        
+    </div>
+<br>
+<br>
+    <app-chart *ngIf="visability" [userLogins]="userLogins" [followers]="followers"></app-chart>
+    
+</div>
+

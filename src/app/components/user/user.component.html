@@ -1,0 +1,30 @@
+<div class="row">
+
+    <div class="col">
+        <img [src]="user.avatar_url" alt="">
+    </div>
+
+    <div class="col">
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <h3>User login:  {{user.login}} </h3>
+        </div>
+
+        <div class="row">
+            <h3>Followers:  {{user.followers}} </h3>
+        </div>
+    
+        <div class="row">
+            <h3>Following:  {{user.following}} </h3>
+        </div>    
+        
+    </div>
+
+</div>
+<br>
+<div class="row">
+    <button type="button" class="btn btn-success" routerLink="home">Back</button>
+
+</div>
